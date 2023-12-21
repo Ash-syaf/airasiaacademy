@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import seaborn as sns
+import pickle
 
 st.write("# Sales Prediction App")
 st.write("This app predicts the **Sales** !")
