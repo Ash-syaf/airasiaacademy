@@ -29,7 +29,6 @@ st.write(df)
 
 loaded_model = pickle.load(open("Sales-model-LR .h5", "rb"))
 pred = loaded_model.predict(df)
-pred_prob = modelGaussianIris.predict_proba(df)
 
 st.subheader('Sales Prediction')
 st.write(pred)
