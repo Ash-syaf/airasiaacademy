@@ -7,14 +7,8 @@ st.write("This app predicts the **Sales** !")
 
 st.sidebar.header('User Input Parameters')
 
-#load model, set cache to prevent reloading
-@st.cache(allow_output_mutation=True)
-def load_model():
-    model=tf.keras.models.load_model('models/Sales-model-LR.h5')
-    return model
-
-with st.spinner("Loading Model...."):
-    model=load_model()
+from keras.models import load_model
+model = load_model('Sales-model-LR.h5')
 
 def user_input_features():
     # label, min, max, default
@@ -35,8 +29,6 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-prediction = load_model(df)
-st.write(prediction)
 
 st.subheader('Prediction')
 pred = model.predict(df)
