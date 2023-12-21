@@ -8,9 +8,6 @@ st.write("This app predicts the **Sales** !")
 
 st.sidebar.header('User Input Parameters')
 
-#from keras.models import load_model
-#model = load_model('Sales-model-LR.h5')
-
 def user_input_features():
     # label, min, max, default
     tv = st.sidebar.slider('TV', 0.0, 300.0, 74.0)
@@ -32,8 +29,10 @@ st.write(df)
 
 loaded_model = pickle.load(open("Sales-model-LR .h5", "rb"))
 pred = loaded_model.predict(df)
+pred_prob = modelGaussianIris.predict_proba(df)
 
-st.subheader('Prediction')
+st.subheader('Sales Prediction')
 st.write(pred)
-#pred = model.predict(df)
-#st.write(pred)
+
+st.subheader('Prediction Probability')
+st.write(pred_prob)
