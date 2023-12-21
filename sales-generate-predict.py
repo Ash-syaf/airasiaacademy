@@ -33,6 +33,3 @@ pred_prob = modelGaussianIris.predict_proba(df)
 
 st.subheader('Sales Prediction')
 st.write(pred)
-
-st.subheader('Prediction Probability')
-st.write(pred_prob)
