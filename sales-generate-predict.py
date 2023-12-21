@@ -7,8 +7,8 @@ st.write("This app predicts the **Sales** !")
 
 st.sidebar.header('User Input Parameters')
 
-from keras.models import load_model
-model = load_model('Sales-model-LR.h5')
+#from keras.models import load_model
+#model = load_model('Sales-model-LR.h5')
 
 def user_input_features():
     # label, min, max, default
@@ -31,5 +31,5 @@ st.write(df)
 
 
 st.subheader('Prediction')
-pred = model.predict(df)
-st.write(pred)
+#pred = model.predict(df)
+#st.write(pred)
