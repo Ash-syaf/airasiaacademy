@@ -29,11 +29,11 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-model = load_model('Sales-model-LR .h5')
-
+loaded_model = pickle.load(open("Sales-model-LR .h5", "rb"))
+pred = loaded_model.predict(df)
 
 st.subheader('Prediction')
 prediction = model.predict(df)
-st.write(predict)
+st.write(pred)
 #pred = model.predict(df)
 #st.write(pred)
