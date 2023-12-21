@@ -29,7 +29,11 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
+model = load_model('Sales-model-LR .h5')
+
 
 st.subheader('Prediction')
+prediction = model.predict(df)
+st.write(predict)
 #pred = model.predict(df)
 #st.write(pred)
